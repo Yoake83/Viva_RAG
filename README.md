@@ -186,11 +186,3 @@ Errors always look like `{"error": {"code", "message", "details"}}` with specifi
 - Auth, rate limiting and per-user session ownership are out of scope here.
 - Ideas: cross-encoder re-ranking, answer-based query expansion for the next topic, voice answers, per-role question banks cached for cost.
 
-## Demo video checklist
-
-1. Show the cover page and the knowledge-base status, then upload a resume and pick a role.
-2. Show the briefing: what was extracted and why those topics were chosen.
-3. Answer one question well and one badly. Open the margin notes to show queries, retrieved passages and rationale.
-4. Point out the difficulty change and the follow-up question after the weak answer.
-5. Finish and walk through the report: score, topic bars, trajectory, study map, transcript, JSON download.
-6. Briefly show the repo structure, `python -m app.cli search ...`, and the database tables.
