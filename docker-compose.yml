@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: viva
+      POSTGRES_PASSWORD: viva
+      POSTGRES_DB: viva
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+   
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U viva"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg://viva:viva@db:5432/viva
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      GROQ_MODEL: ${GROQ_MODEL:-openai/gpt-oss-120b}
+      CORS_ORIGINS: http://localhost:3000
+      CHROMA_DIR: /app/storage/chroma
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/storage:/app/storage
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:8000
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:

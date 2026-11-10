@@ -1,0 +1,18 @@
+{
+  "books": [
+    {"file": "hundred-page-ml-book.pdf", "title": "The Hundred-Page Machine Learning Book", "author": "Andriy Burkov",
+     "roles": ["ai_ml_engineer", "data_scientist", "ml_backend_engineer"]},
+    {"file": "mitchell-machine-learning.pdf", "title": "Machine Learning", "author": "Tom Mitchell",
+     "roles": ["ai_ml_engineer", "ml_researcher"]},
+    {"file": "ml-for-absolute-beginners.pdf", "title": "Machine Learning for Absolute Beginners", "author": "Oliver Theobald",
+     "roles": ["ai_ml_engineer"]},
+    {"file": "intro-ml-with-python.pdf", "title": "Introduction to Machine Learning with Python", "author": "Muller and Guido",
+     "roles": ["data_scientist", "ml_backend_engineer"]},
+    {"file": "master-ml-algorithms.pdf", "title": "Master Machine Learning Algorithms", "author": "Jason Brownlee",
+     "roles": ["data_scientist"]},
+    {"file": "bishop-prml.pdf", "title": "Pattern Recognition and Machine Learning", "author": "Christopher Bishop",
+     "roles": ["ml_researcher"]},
+    {"file": "ai-ml-dl.pdf", "title": "Artificial Intelligence, Machine Learning and Deep Learning", "author": "",
+     "roles": ["ai_ml_engineer"]}
+  ]
+}
